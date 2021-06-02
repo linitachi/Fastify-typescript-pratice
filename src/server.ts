@@ -36,9 +36,6 @@ function createServer() {
 
 
 	server.register(require('./plugins/auth'));
-	// server.register(require('fastify-jwt'), {
-	// 	secret: 'supersecret'
-	// })
 
 	server.setErrorHandler((error, req, res) => {
 		req.log.error(error.toString());

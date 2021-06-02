@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/index.ts",
+    "start": "npm run build && node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development docker-compose up -d && nodemon",
     "build": "tsc",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watchAll",
@@ -14,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "fastify": "^3.14.2",
     "fastify-cors": "^5.2.0",
